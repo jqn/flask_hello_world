@@ -1,0 +1,21 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Coding Challenges</h1>
+  <p class="lead">Solve tough coding problems here.</p>
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.string.label }}<br>
+      {{ form.string(size=32) }}<br>
+      {% for error in form.string.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+</div>
+{% endblock %}
